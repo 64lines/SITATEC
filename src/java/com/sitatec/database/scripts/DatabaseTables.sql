@@ -6,5 +6,6 @@ CREATE TABLE "registered_user" (
     last_name     varchar(100),
     mobile_phone  varchar(20),
     phone         varchar(20),
-    address       varchar(100)
+    address       varchar(100),
+    is_superuser  integer
 );

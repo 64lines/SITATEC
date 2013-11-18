@@ -14,13 +14,13 @@
     <html>
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-            <title>JSP Page</title>
+            <title>Proyecto SITATEC</title>
 <link rel="stylesheet" type="text/css" href="/SITATEC/faces/jsfcrud.css" />
         </head>
         <body>
-            <h1><h:outputText value="JavaServer Faces"/></h1>
+            <h1><h:outputText value="SITATEC"/></h1>
                 <h:form>
-                    <h:commandLink action="#{registeredUser.listSetup}" value="Show All RegisteredUser Items"/>
+                    <h:commandLink action="#{registeredUser.listSetup}" value="Usuarios"/>
                 </h:form>
 
         </body>

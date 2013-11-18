@@ -6,8 +6,14 @@
     <html>
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-            <title>New RegisteredUser</title>
+            <title>Crear un nuevo usuario</title>
             <link rel="stylesheet" type="text/css" href="/SITATEC/faces/jsfcrud.css" />
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" type="text/css" href="/SITATEC/faces/bootstrap.min.css">
+            <!-- Optional theme -->
+            <link rel="stylesheet" type="text/css" href="/SITATEC/faces/bootstrap-theme.min.css">
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="/SITATEC/faces/bootstrap.min.js"></script>
         </head>
         <body>
         <h:panelGroup id="messagePanel" layout="block">

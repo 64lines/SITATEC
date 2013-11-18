@@ -29,7 +29,8 @@ import javax.persistence.Table;
     @NamedQuery(name = "RegisteredUser.findByLastName", query = "SELECT r FROM RegisteredUser r WHERE r.lastName = :lastName"),
     @NamedQuery(name = "RegisteredUser.findByMobilePhone", query = "SELECT r FROM RegisteredUser r WHERE r.mobilePhone = :mobilePhone"),
     @NamedQuery(name = "RegisteredUser.findByPhone", query = "SELECT r FROM RegisteredUser r WHERE r.phone = :phone"),
-    @NamedQuery(name = "RegisteredUser.findByAddress", query = "SELECT r FROM RegisteredUser r WHERE r.address = :address")})
+    @NamedQuery(name = "RegisteredUser.findByAddress", query = "SELECT r FROM RegisteredUser r WHERE r.address = :address"),
+    @NamedQuery(name = "RegisteredUser.findByIsSuperuser", query = "SELECT r FROM RegisteredUser r WHERE r.isSuperuser = :isSuperuser")})
 public class RegisteredUser implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -52,6 +53,8 @@ public class RegisteredUser implements Serializable {
     private String phone;
     @Column(name = "address")
     private String address;
+    @Column(name = "is_superuser")
+    private Integer isSuperuser;
 
     public RegisteredUser() {
     }
@@ -130,6 +133,14 @@ public class RegisteredUser implements Serializable {
         this.address = address;
     }
 
+    public Integer getIsSuperuser() {
+        return isSuperuser;
+    }
+
+    public void setIsSuperuser(Integer isSuperuser) {
+        this.isSuperuser = isSuperuser;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -152,7 +163,7 @@ public class RegisteredUser implements Serializable {
 
     @Override
     public String toString() {
-        return "com.sitatec.model.RegisteredUser[id=" + id + "]";
+        return "com.sitatec.models.RegisteredUser[id=" + id + "]";
     }
 
 }

@@ -12,7 +12,7 @@
     <navigation-rule>
         <navigation-case>
             <from-outcome>welcome</from-outcome>
-            <to-view-id>/welcomeJSF.jsp</to-view-id>
+            <to-view-id>/mainMenu.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
@@ -23,9 +23,9 @@
     </navigation-rule>
     <managed-bean>
         <managed-bean-name>registeredUser</managed-bean-name>
-        <managed-bean-class>com.sitatec.model.RegisteredUserController</managed-bean-class>
-        <managed-bean-scope>session</managed-bean-scope>
-    </managed-bean>
+        <managed-bean-class>com.sitatec.beans.RegisteredUserController</managed-bean-class>
+
+        <managed-bean-scope>session</managed-bean-scope></managed-bean>
     <managed-bean>
         <managed-bean-name>registeredUserJpa</managed-bean-name>
         <managed-bean-class>com.sitatec.controller.RegisteredUserJpaController</managed-bean-class>
@@ -33,7 +33,7 @@
     </managed-bean>
     <converter>
         <converter-for-class>com.sitatec.model.RegisteredUser</converter-for-class>
-        <converter-class>com.sitatec.model.RegisteredUserConverter</converter-class>
+        <converter-class>com.sitatec.beans.RegisteredUserConverter</converter-class>
     </converter>
     <navigation-rule>
         <navigation-case>
@@ -60,4 +60,6 @@
         </navigation-case>
     </navigation-rule>
 </faces-config>
+
+
 

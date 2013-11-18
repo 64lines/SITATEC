@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package com.sitatec.model;
+package com.sitatec.beans;
 
 import com.sitatec.controller.RegisteredUserJpaController;
 import com.sitatec.model.util.PagingInfo;
@@ -13,6 +13,7 @@ import java.util.List;
 import javax.faces.FacesException;
 import com.sitatec.model.util.JsfUtil;
 import com.sitatec.controller.exceptions.NonexistentEntityException;
+import com.sitatec.model.RegisteredUser;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;

@@ -3,9 +3,10 @@
  * and open the template in the editor.
  */
 
-package com.sitatec.model;
+package com.sitatec.beans;
 
 import com.sitatec.controller.RegisteredUserJpaController;
+import com.sitatec.model.RegisteredUser;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
