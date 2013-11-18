@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+
+<faces-config version="1.2" 
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+    <application>
+        <el-resolver>com.sitatec.model.util.JsfCrudELResolver</el-resolver>
+    </application>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>welcome</from-outcome>
+            <to-view-id>/welcomeJSF.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>login</from-outcome>
+            <to-view-id>/Login.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>registeredUser</managed-bean-name>
+        <managed-bean-class>com.sitatec.model.RegisteredUserController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>registeredUserJpa</managed-bean-name>
+        <managed-bean-class>com.sitatec.controller.RegisteredUserJpaController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <converter>
+        <converter-for-class>com.sitatec.model.RegisteredUser</converter-for-class>
+        <converter-class>com.sitatec.model.RegisteredUserConverter</converter-class>
+    </converter>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>registeredUser_create</from-outcome>
+            <to-view-id>/registeredUser/New.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>registeredUser_list</from-outcome>
+            <to-view-id>/registeredUser/List.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>registeredUser_edit</from-outcome>
+            <to-view-id>/registeredUser/Edit.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>registeredUser_detail</from-outcome>
+            <to-view-id>/registeredUser/Detail.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>
+
