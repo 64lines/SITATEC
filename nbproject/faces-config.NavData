@@ -2,11 +2,31 @@
 <Scene Scope="Project" version="2">
     <Scope Scope="Faces Configuration Only"/>
     <Scope Scope="Project">
-        <Node id="registeredUser/Edit.jsp" x="650" y="150" zoom="false"/>
-        <Node id="registeredUser/List.jsp" x="400" y="300" zoom="true"/>
-        <Node id="registeredUser/Detail.jsp" x="150" y="300" zoom="true"/>
-        <Node id="registeredUser/New.jsp" x="400" y="150" zoom="true"/>
-        <Node id="welcomeJSF.jsp" x="150" y="150" zoom="true"/>
+        <Node id="phoneCall/List.jsp" x="400" y="300" zoom="true"/>
+        <Node id="tariff/New.jsp" x="650" y="300" zoom="true"/>
+        <Node id="phoneCall/Detail.jsp" x="1150" y="150" zoom="true"/>
+        <Node id="tariff/Detail.jsp" x="650" y="450" zoom="true"/>
+        <Node id="discountWeekDay/Detail.jsp" x="150" y="450" zoom="true"/>
+        <Node id="operator/Edit.jsp" x="400" y="450" zoom="true"/>
+        <Node id="discountHolyDate/List.jsp" x="400" y="600" zoom="true"/>
+        <Node id="operator/New.jsp" x="400" y="750" zoom="true"/>
+        <Node id="discountHolyDate/Edit.jsp" x="150" y="750" zoom="true"/>
+        <Node id="tariff/List.jsp" x="1150" y="300" zoom="true"/>
+        <Node id="phoneCall/New.jsp" x="150" y="150" zoom="true"/>
+        <Node id="discountWeekDay/List.jsp" x="900" y="600" zoom="true"/>
+        <Node id="discountHolyDate/Detail.jsp" x="900" y="150" zoom="true"/>
+        <Node id="phoneCall/Edit.jsp" x="900" y="300" zoom="true"/>
+        <Node id="discountHolyDate/New.jsp" x="150" y="900" zoom="true"/>
+        <Node id="operator/List.jsp" x="150" y="600" zoom="true"/>
+        <Node id="welcomeJSF.jsp" x="150" y="300" zoom="true"/>
+        <Node id="discountWeekDay/Edit.jsp" x="1400" y="300" zoom="true"/>
+        <Node id="person/New.jsp" x="400" y="150" zoom="true"/>
+        <Node id="person/List.jsp" x="1150" y="450" zoom="true"/>
+        <Node id="person/Detail.jsp" x="1400" y="150" zoom="true"/>
+        <Node id="discountWeekDay/New.jsp" x="650" y="600" zoom="true"/>
+        <Node id="person/Edit.jsp" x="1650" y="150" zoom="true"/>
+        <Node id="operator/Detail.jsp" x="900" y="450" zoom="true"/>
+        <Node id="tariff/Edit.jsp" x="650" y="150" zoom="true"/>
     </Scope>
     <Scope Scope="All Faces Configurations"/>
 </Scene>

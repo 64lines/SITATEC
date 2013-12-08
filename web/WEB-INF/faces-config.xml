@@ -7,59 +7,245 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
     <application>
-        <el-resolver>com.sitatec.model.util.JsfCrudELResolver</el-resolver>
+        <el-resolver>com.sitatec.bean.util.JsfCrudELResolver</el-resolver>
     </application>
     <navigation-rule>
         <navigation-case>
             <from-outcome>welcome</from-outcome>
-            <to-view-id>/mainMenu.jsp</to-view-id>
-        </navigation-case>
-    </navigation-rule>
-    <navigation-rule>
-        <navigation-case>
-            <from-outcome>login</from-outcome>
-            <to-view-id>/Login.jsp</to-view-id>
+            <to-view-id>/welcomeJSF.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <managed-bean>
-        <managed-bean-name>registeredUser</managed-bean-name>
-        <managed-bean-class>com.sitatec.beans.RegisteredUserController</managed-bean-class>
-
-        <managed-bean-scope>session</managed-bean-scope></managed-bean>
+        <managed-bean-name>discountHolyDate</managed-bean-name>
+        <managed-bean-class>com.sitatec.bean.DiscountHolyDateController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
     <managed-bean>
-        <managed-bean-name>registeredUserJpa</managed-bean-name>
-        <managed-bean-class>com.sitatec.controller.RegisteredUserJpaController</managed-bean-class>
+        <managed-bean-name>discountHolyDateJpa</managed-bean-name>
+        <managed-bean-class>com.sitatec.controller.DiscountHolyDateJpaController</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
     <converter>
-        <converter-for-class>com.sitatec.model.RegisteredUser</converter-for-class>
-        <converter-class>com.sitatec.beans.RegisteredUserConverter</converter-class>
+        <converter-for-class>com.sitatec.model.DiscountHolyDate</converter-for-class>
+        <converter-class>com.sitatec.bean.DiscountHolyDateConverter</converter-class>
     </converter>
     <navigation-rule>
         <navigation-case>
-            <from-outcome>registeredUser_create</from-outcome>
-            <to-view-id>/registeredUser/New.jsp</to-view-id>
+            <from-outcome>discountHolyDate_create</from-outcome>
+            <to-view-id>/discountHolyDate/New.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <navigation-case>
-            <from-outcome>registeredUser_list</from-outcome>
-            <to-view-id>/registeredUser/List.jsp</to-view-id>
+            <from-outcome>discountHolyDate_list</from-outcome>
+            <to-view-id>/discountHolyDate/List.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <navigation-case>
-            <from-outcome>registeredUser_edit</from-outcome>
-            <to-view-id>/registeredUser/Edit.jsp</to-view-id>
+            <from-outcome>discountHolyDate_edit</from-outcome>
+            <to-view-id>/discountHolyDate/Edit.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <navigation-case>
-            <from-outcome>registeredUser_detail</from-outcome>
-            <to-view-id>/registeredUser/Detail.jsp</to-view-id>
+            <from-outcome>discountHolyDate_detail</from-outcome>
+            <to-view-id>/discountHolyDate/Detail.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>discountWeekDay</managed-bean-name>
+        <managed-bean-class>com.sitatec.bean.DiscountWeekDayController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>discountWeekDayJpa</managed-bean-name>
+        <managed-bean-class>com.sitatec.controller.DiscountWeekDayJpaController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <converter>
+        <converter-for-class>com.sitatec.model.DiscountWeekDay</converter-for-class>
+        <converter-class>com.sitatec.bean.DiscountWeekDayConverter</converter-class>
+    </converter>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>discountWeekDay_create</from-outcome>
+            <to-view-id>/discountWeekDay/New.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>discountWeekDay_list</from-outcome>
+            <to-view-id>/discountWeekDay/List.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>discountWeekDay_edit</from-outcome>
+            <to-view-id>/discountWeekDay/Edit.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>discountWeekDay_detail</from-outcome>
+            <to-view-id>/discountWeekDay/Detail.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>operator</managed-bean-name>
+        <managed-bean-class>com.sitatec.bean.OperatorController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>operatorJpa</managed-bean-name>
+        <managed-bean-class>com.sitatec.controller.OperatorJpaController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <converter>
+        <converter-for-class>com.sitatec.model.Operator</converter-for-class>
+        <converter-class>com.sitatec.bean.OperatorConverter</converter-class>
+    </converter>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>operator_create</from-outcome>
+            <to-view-id>/operator/New.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>operator_list</from-outcome>
+            <to-view-id>/operator/List.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>operator_edit</from-outcome>
+            <to-view-id>/operator/Edit.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>operator_detail</from-outcome>
+            <to-view-id>/operator/Detail.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>person</managed-bean-name>
+        <managed-bean-class>com.sitatec.bean.PersonController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>personJpa</managed-bean-name>
+        <managed-bean-class>com.sitatec.controller.PersonJpaController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <converter>
+        <converter-for-class>com.sitatec.model.Person</converter-for-class>
+        <converter-class>com.sitatec.bean.PersonConverter</converter-class>
+    </converter>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>person_create</from-outcome>
+            <to-view-id>/person/New.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>person_list</from-outcome>
+            <to-view-id>/person/List.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>person_edit</from-outcome>
+            <to-view-id>/person/Edit.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>person_detail</from-outcome>
+            <to-view-id>/person/Detail.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>phoneCall</managed-bean-name>
+        <managed-bean-class>com.sitatec.bean.PhoneCallController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>phoneCallJpa</managed-bean-name>
+        <managed-bean-class>com.sitatec.controller.PhoneCallJpaController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <converter>
+        <converter-for-class>com.sitatec.model.PhoneCall</converter-for-class>
+        <converter-class>com.sitatec.bean.PhoneCallConverter</converter-class>
+    </converter>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>phoneCall_create</from-outcome>
+            <to-view-id>/phoneCall/New.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>phoneCall_list</from-outcome>
+            <to-view-id>/phoneCall/List.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>phoneCall_edit</from-outcome>
+            <to-view-id>/phoneCall/Edit.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>phoneCall_detail</from-outcome>
+            <to-view-id>/phoneCall/Detail.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>tariff</managed-bean-name>
+        <managed-bean-class>com.sitatec.bean.TariffController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>tariffJpa</managed-bean-name>
+        <managed-bean-class>com.sitatec.controller.TariffJpaController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <converter>
+        <converter-for-class>com.sitatec.model.Tariff</converter-for-class>
+        <converter-class>com.sitatec.bean.TariffConverter</converter-class>
+    </converter>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>tariff_create</from-outcome>
+            <to-view-id>/tariff/New.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>tariff_list</from-outcome>
+            <to-view-id>/tariff/List.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>tariff_edit</from-outcome>
+            <to-view-id>/tariff/Edit.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>tariff_detail</from-outcome>
+            <to-view-id>/tariff/Detail.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>
+
+
 
 
 

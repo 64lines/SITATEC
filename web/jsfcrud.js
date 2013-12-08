@@ -1,5 +1,5 @@
 var jsfcrud = {};
-jsfcrud.busyImagePath = '/SITATEC/faces/busy.gif';
+jsfcrud.busyImagePath = '/Sitatec_Project/faces/busy.gif';
 jsfcrud.isDynamicFacesAvailable = typeof DynaFaces != 'undefined';
 jsfcrud.canAjaxEnableForm = true;
 if (!jsfcrud.isDynamicFacesAvailable) {
