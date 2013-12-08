@@ -21,7 +21,7 @@
             <h:commandLink action="#{person.createSetup}" value="Crear nuevo usuario"/>
             <br/>
             <br/>
-            <h:outputText escape="false" value="(No Person Items Found)<br />" rendered="#{person.pagingInfo.itemCount == 0}" />
+            <h:outputText escape="false" value="(No hay usuarios disponibles)<br />" rendered="#{person.pagingInfo.itemCount == 0}" />
             <h:panelGroup rendered="#{person.pagingInfo.itemCount > 0}">
                 <h:outputText value="Item #{person.pagingInfo.firstItem + 1}..#{person.pagingInfo.lastItem} of #{person.pagingInfo.itemCount}"/>&nbsp;
                 <h:commandLink action="#{person.prev}" value="Previous #{person.pagingInfo.batchSize}" rendered="#{person.pagingInfo.firstItem >= person.pagingInfo.batchSize}"/>&nbsp;
@@ -99,7 +99,7 @@
                             <f:param name="jsfcrud.currentPerson" value="#{jsfcrud_class['com.sitatec.bean.util.JsfUtil'].jsfcrud_method['getAsConvertedString'][item][person.converter].jsfcrud_invoke}"/>
                         </h:commandLink>
                         <br/>
-                        <h:commandLink value="Eliminar" action="#{person.destroy}">
+                        <h:commandLink value="Eliminar" onclick="if (!confirm('¿Está seguro que desea eliminar este registro?')) return false" action="#{person.destroy}">
                             <f:param name="jsfcrud.currentPerson" value="#{jsfcrud_class['com.sitatec.bean.util.JsfUtil'].jsfcrud_method['getAsConvertedString'][item][person.converter].jsfcrud_invoke}"/>
                         </h:commandLink>
                     </h:column>

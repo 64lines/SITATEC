@@ -5,7 +5,11 @@
 
 package com.sitatec.model;
 
+import com.sitatec.controller.OperatorJpaController;
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -99,6 +103,43 @@ public class PhoneCall implements Serializable {
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
+    }
+
+    public long getDuration() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/ddHH:mm");
+        try {
+            Date date1 = simpleDateFormat.parse(this.startTime);
+            Date date2 = simpleDateFormat.parse(this.endTime);
+            long diff = date2.getTime() - date1.getTime();
+            long diffMinutes = diff / (60 * 1000);
+
+            return diffMinutes;
+        }
+        catch (ParseException ex) {
+            return 0L;
+        }
+    }
+
+    public String getOriginOperadorName() {
+        OperatorJpaController controller = new OperatorJpaController();
+        Operator operator = controller.findOperatorByPhoneNumber(this.originNumber);
+
+        if (operator != null) {
+            return operator.getOperatorName();
+        }
+        
+        return "Desconocido";
+    }
+
+    public String getDestinationOperadorName() {
+        OperatorJpaController controller = new OperatorJpaController();
+        Operator operator = controller.findOperatorByPhoneNumber(this.destinationNumber);
+        
+        if (operator != null) {
+            return operator.getOperatorName();
+        }
+
+        return "Desconocido";
     }
 
     @Override

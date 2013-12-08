@@ -17,7 +17,8 @@
 <link rel="stylesheet" type="text/css" href="/Sitatec_Project/faces/jsfcrud.css" />
         </head>
         <body>
-            <h1><h:outputText value="JavaServer Faces"/></h1>
+            <h1><h:outputText value="Proyecto SITATEC"/></h1>
+            <h2><h:outputText value="Menú principal"/></h2>
                 <h:form>
                     <h:commandLink action="#{person.listSetup}" value="Usuarios"/>
                 </h:form>

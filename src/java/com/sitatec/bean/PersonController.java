@@ -115,7 +115,7 @@ public class PersonController {
         }
         try {
             jpaController.edit(person);
-            JsfUtil.addSuccessMessage("Person was successfully updated.");
+            JsfUtil.addSuccessMessage("Usuario fue modifcado correctamente.");
         } catch (NonexistentEntityException ne) {
             JsfUtil.addErrorMessage(ne.getLocalizedMessage());
             return listSetup();

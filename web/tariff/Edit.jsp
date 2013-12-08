@@ -24,7 +24,6 @@
                 <h:inputText id="destinationOperator" value="#{tariff.tariff.destinationOperator}" title="DestinationOperator" required="true" requiredMessage="The destinationOperator field is required." />
                 <h:outputText value="ValueFee:"/>
                 <h:inputText id="valueFee" value="#{tariff.tariff.valueFee}" title="ValueFee" required="true" requiredMessage="The valueFee field is required." />
-
             </h:panelGrid>
             <br />
             <h:commandLink action="#{tariff.edit}" value="Save">
