@@ -14,13 +14,13 @@
         <Node id="tariff/List.jsp" x="1150" y="300" zoom="true"/>
         <Node id="phoneCall/New.jsp" x="150" y="150" zoom="true"/>
         <Node id="discountWeekDay/List.jsp" x="900" y="600" zoom="true"/>
-        <Node id="discountHolyDate/Detail.jsp" x="900" y="150" zoom="true"/>
         <Node id="phoneCall/Edit.jsp" x="900" y="300" zoom="true"/>
+        <Node id="discountHolyDate/Detail.jsp" x="900" y="150" zoom="true"/>
         <Node id="discountHolyDate/New.jsp" x="150" y="900" zoom="true"/>
         <Node id="operator/List.jsp" x="150" y="600" zoom="true"/>
         <Node id="welcomeJSF.jsp" x="150" y="300" zoom="true"/>
-        <Node id="discountWeekDay/Edit.jsp" x="1400" y="300" zoom="true"/>
         <Node id="person/New.jsp" x="400" y="150" zoom="true"/>
+        <Node id="discountWeekDay/Edit.jsp" x="1400" y="300" zoom="true"/>
         <Node id="person/List.jsp" x="1150" y="450" zoom="true"/>
         <Node id="person/Detail.jsp" x="1400" y="150" zoom="true"/>
         <Node id="login.jsp" x="650" y="750" zoom="true"/>
