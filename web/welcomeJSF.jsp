@@ -36,10 +36,6 @@
                 </h:form>
 
                 <h:form>
-                    <h:commandLink action="#{discountWeekDay.listSetup}" value="Descuentos de días de semana"/>
-                </h:form>
-
-                <h:form>
                     <h:commandLink action="#{discountHolyDate.listSetup}" value="Descuentos de días especiales"/>
                 </h:form>
 

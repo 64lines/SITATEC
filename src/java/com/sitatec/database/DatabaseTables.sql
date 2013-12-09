@@ -20,9 +20,12 @@ CREATE TABLE "phone_call" (
 
 CREATE TABLE "operator" (
     id                  integer PRIMARY KEY,
-    operator_name       varchar(25) NOT NULL,
+    operator_name       varchar(25) NOT NULL UNIQUE,
+    nit                 varchar(25) NOT NULL UNIQUE,
+    email               varchar(50) NOT NULL UNIQUE,
     initial_range       integer NOT NULL,
     final_range         integer NOT NULL
+    operator_type       integer NOT NULL
 );
 
 CREATE TABLE "tariff" (

@@ -23,10 +23,14 @@
                 <h:outputText value="Id:"/>
                 <h:outputText value="#{tariff.tariff.id}" title="Id" />
                 --%>
-                <h:outputText value="Operador de origen:"/>
-                <h:inputText id="originOperator" value="#{tariff.tariff.originOperator}" title="Operador de origen" required="true" requiredMessage="The originOperator field is required." />
+               <h:outputText value="Operador de origen:"/>
+                <h:selectOneMenu value="#{tariff.tariff.originOperator}" id="originOperator" title="OriginOperator" required="true" requiredMessage="The originOperator field is required." >
+                    <f:selectItems value="#{operator.operatorNames}" />
+                </h:selectOneMenu>
                 <h:outputText value="Operador de destino:"/>
-                <h:inputText id="destinationOperator" value="#{tariff.tariff.destinationOperator}" title="Operador de destino" required="true" requiredMessage="The destinationOperator field is required." />
+                <h:selectOneMenu id="destinationOperator" value="#{tariff.tariff.destinationOperator}" title="DestinationOperator" required="true" requiredMessage="The destinationOperator field is required." >
+                    <f:selectItems value="#{operator.operatorNames}" />
+                </h:selectOneMenu>
                 <h:outputText value="Valor de la tarifa por minuto:"/>
                 <h:inputText id="valueFee" value="#{tariff.tariff.valueFee}" title="Valor de la tarifa por minuto" required="true" requiredMessage="The valueFee field is required." />
             </h:panelGrid>

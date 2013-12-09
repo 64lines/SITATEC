@@ -6,7 +6,7 @@
     <html>
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-            <title>New DiscountWeekDay</title>
+            <title>Crear descuento para día especial</title>
             <link rel="stylesheet" type="text/css" href="/Sitatec_Project/faces/jsfcrud.css" />
         </head>
         <body>

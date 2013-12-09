@@ -25,10 +25,16 @@
                 --%>
                 <h:outputText value="Nombre del operador:"/>
                 <h:outputText value="#{operator.operator.operatorName}" title="OperatorName" />
+                <h:outputText value="NIT:"/>
+                <h:outputText value="#{operator.operator.nit}" title="NIT" />
+                <h:outputText value="Correo electrónico:"/>
+                <h:outputText value="#{operator.operator.email}" title="Correo electrónico" />
                 <h:outputText value="Rango inicial de numeración:"/>
                 <h:outputText value="#{operator.operator.initialRange}" title="InitialRange" />
                 <h:outputText value="Rango final de numeración:"/>
                 <h:outputText value="#{operator.operator.finalRange}" title="FinalRange" />
+                <h:outputText value="Tipo de operador:"/>
+                <h:outputText value="#{operator.operator.operatorTypeName}" title="Tipo de operador" />
             </h:panelGrid>
             <br />
             <h:commandLink action="#{operator.destroy}" onclick="if (!confirm('¿Está seguro que desea eliminar este registro?')) return false" value="Eliminar">

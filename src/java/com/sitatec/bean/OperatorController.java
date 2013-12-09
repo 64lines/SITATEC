@@ -63,6 +63,18 @@ public class OperatorController {
         return operator;
     }
 
+    public List<SelectItem> getOperatorNames() {
+        List<SelectItem> operatorItemNames = new ArrayList<SelectItem>();
+
+        for(Operator oper: getOperatorItems()) {
+            SelectItem item = new SelectItem();
+            item.setLabel(oper.getOperatorName());
+            item.setValue(oper.getId());
+            operatorItemNames.add(item);
+        }
+        return operatorItemNames;
+    }
+
     public String listSetup() {
         reset(true);
         return "operator_list";
@@ -157,18 +169,6 @@ public class OperatorController {
             operatorItems = jpaController.findOperatorEntities(pagingInfo.getBatchSize(), pagingInfo.getFirstItem());
         }
         return operatorItems;
-    }
-
-    public List<SelectItem> getOperatorNames() {
-        List<SelectItem> operatorItemNames = new ArrayList<SelectItem>();
-
-        for(Operator oper: getOperatorItems()) {
-            SelectItem item = new SelectItem();
-            item.setLabel(oper.getOperatorName());
-            item.setValue(oper.getId());
-            operatorItemNames.add(item);
-        }
-        return operatorItemNames;
     }
 
     public String next() {

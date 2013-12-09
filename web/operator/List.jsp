@@ -44,6 +44,18 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">
+                            <h:outputText value="NIT"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nit}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Correo electrónico"/>
+                        </f:facet>
+                        <h:outputText value="#{item.email}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
                             <h:outputText value="Rango inicial de numeración"/>
                         </f:facet>
                         <h:outputText value="#{item.initialRange}"/>
@@ -56,9 +68,15 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">
+                            <h:outputText value="Tipo de Operador"/>
+                        </f:facet>
+                        <h:outputText value="#{item.operatorTypeName}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
                             <h:outputText escape="false" value="Acciones"/>
                         </f:facet>
-                        <h:commandLink value="Mostrar" action="#{operator.detailSetup}">
+                        <h:commandLink value="Ver" action="#{operator.detailSetup}">
                             <f:param name="jsfcrud.currentOperator" value="#{jsfcrud_class['com.sitatec.bean.util.JsfUtil'].jsfcrud_method['getAsConvertedString'][item][operator.converter].jsfcrud_invoke}"/>
                         </h:commandLink>
                         <br />
