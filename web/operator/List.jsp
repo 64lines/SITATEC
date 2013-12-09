@@ -56,7 +56,7 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText escape="false" value="&nbsp;"/>
+                            <h:outputText escape="false" value="Acciones"/>
                         </f:facet>
                         <h:commandLink value="Mostrar" action="#{operator.detailSetup}">
                             <f:param name="jsfcrud.currentOperator" value="#{jsfcrud_class['com.sitatec.bean.util.JsfUtil'].jsfcrud_method['getAsConvertedString'][item][operator.converter].jsfcrud_invoke}"/>

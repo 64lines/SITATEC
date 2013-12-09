@@ -14,6 +14,7 @@ import java.util.List;
 import javax.faces.FacesException;
 import com.sitatec.bean.util.JsfUtil;
 import com.sitatec.controller.exceptions.NonexistentEntityException;
+import java.util.ArrayList;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
@@ -156,6 +157,18 @@ public class OperatorController {
             operatorItems = jpaController.findOperatorEntities(pagingInfo.getBatchSize(), pagingInfo.getFirstItem());
         }
         return operatorItems;
+    }
+
+    public List<SelectItem> getOperatorNames() {
+        List<SelectItem> operatorItemNames = new ArrayList<SelectItem>();
+
+        for(Operator oper: getOperatorItems()) {
+            SelectItem item = new SelectItem();
+            item.setLabel(oper.getOperatorName());
+            item.setValue(oper.getId());
+            operatorItemNames.add(item);
+        }
+        return operatorItemNames;
     }
 
     public String next() {

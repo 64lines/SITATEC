@@ -15,7 +15,7 @@
         </h:panelGroup>
         <h1>Modificar usuario</h1>
         <h:form>
-            <h:commandLink value="Menú principal" action="welcome" immediate="true" />&raquo <h:commandLink action="#{person.listSetup}" value="Lista de usuarios" immediate="true"/>
+            <h:commandLink value="Menú principal" action="welcome" immediate="true" />&raquo; <h:commandLink action="#{person.listSetup}" value="Lista de usuarios" immediate="true"/>
             <br/>
             <br/>
             <h:commandLink action="#{person.detailSetup}" value="Detalle de usuario" immediate="true">

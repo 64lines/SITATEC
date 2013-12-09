@@ -6,7 +6,9 @@
 package com.sitatec.model;
 
 import com.sitatec.controller.OperatorJpaController;
+import com.sitatec.controller.TariffJpaController;
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -120,6 +122,35 @@ public class PhoneCall implements Serializable {
         }
     }
 
+    public long getCost() {
+        int originId = 0;
+        int destinationId = 0;
+
+        Operator originOperator = this.getOriginOperador();
+        Operator destinationOperator = this.getDestinationOperador();
+
+        if(originOperator == null || destinationOperator == null) {
+            return 0L;
+        }
+
+        originId = originOperator.getId();
+        destinationId = destinationOperator.getId();
+
+        TariffJpaController controller = new TariffJpaController();
+
+        for(Tariff tariff: controller.findTariffEntities()) {
+            if(tariff.getOriginOperator() == originId
+                    && tariff.getDestinationOperator() == destinationId) {
+               String valueFee = tariff.getValueFee().toString();
+               long totalDurationValue = Long.parseLong(valueFee) * this.getDuration();
+               
+               return totalDurationValue;
+            }
+        }
+
+        return 0L;
+    }
+
     public String getOriginOperadorName() {
         OperatorJpaController controller = new OperatorJpaController();
         Operator operator = controller.findOperatorByPhoneNumber(this.originNumber);
@@ -131,6 +162,17 @@ public class PhoneCall implements Serializable {
         return "Desconocido";
     }
 
+    public Operator getOriginOperador() {
+        OperatorJpaController controller = new OperatorJpaController();
+        Operator operator = controller.findOperatorByPhoneNumber(this.originNumber);
+
+        if (operator != null) {
+            return operator;
+        }
+
+        return null;
+    }
+
     public String getDestinationOperadorName() {
         OperatorJpaController controller = new OperatorJpaController();
         Operator operator = controller.findOperatorByPhoneNumber(this.destinationNumber);
@@ -140,6 +182,17 @@ public class PhoneCall implements Serializable {
         }
 
         return "Desconocido";
+    }
+
+    public Operator getDestinationOperador() {
+        OperatorJpaController controller = new OperatorJpaController();
+        Operator operator = controller.findOperatorByPhoneNumber(this.destinationNumber);
+
+        if (operator != null) {
+            return operator;
+        }
+
+        return operator;
     }
 
     @Override

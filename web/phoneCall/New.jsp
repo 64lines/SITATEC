@@ -15,7 +15,7 @@
         </h:panelGroup>
         <h1>Crear nueva llamada telefónica</h1>
         <h:form>
-            <h:commandLink value="Menú principal" action="welcome" immediate="true" />&raquo <h:commandLink action="#{phoneCall.listSetup}" value="Lista de llamadas telefónicas"/>
+            <h:commandLink value="Menú principal" action="welcome" immediate="true" />&raquo; <h:commandLink action="#{phoneCall.listSetup}" value="Lista de llamadas telefónicas"/>
             <br />
             <br />
             <h:inputHidden id="validateCreateField" validator="#{phoneCall.validateCreate}" value="value"/>

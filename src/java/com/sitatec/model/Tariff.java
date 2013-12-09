@@ -5,6 +5,7 @@
 
 package com.sitatec.model;
 
+import com.sitatec.controller.OperatorJpaController;
 import java.io.Serializable;
 import java.math.BigInteger;
 import javax.persistence.Basic;
@@ -69,12 +70,32 @@ public class Tariff implements Serializable {
         return originOperator;
     }
 
+    public String getOriginOperatorName() {
+        OperatorJpaController controller = new OperatorJpaController();
+        Operator operator = controller.findOperator(originOperator);
+
+        if(operator != null) {
+            return operator.getOperatorName();
+        }
+        return "Desconocido";
+    }
+
     public void setOriginOperator(int originOperator) {
         this.originOperator = originOperator;
     }
 
     public int getDestinationOperator() {
         return destinationOperator;
+    }
+
+    public String getDestinationOperatorName() {
+        OperatorJpaController controller = new OperatorJpaController();
+        Operator operator = controller.findOperator(destinationOperator);
+        
+        if(operator != null) {
+            return operator.getOperatorName();
+        }
+        return "Desconocido";
     }
 
     public void setDestinationOperator(int destinationOperator) {

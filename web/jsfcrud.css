@@ -80,3 +80,10 @@ tr.jsfcrud_even_row {
     left: 50%;
     top: 50%;
 }
+
+td {
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    vertical-align: middle !important;
+}

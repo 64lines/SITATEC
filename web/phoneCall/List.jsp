@@ -81,6 +81,12 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">
+                            <h:outputText value="Valor total"/>
+                        </f:facet>
+                        <h:outputText value="$ #{item.cost}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
                             <h:outputText escape="false" value="Acciones"/>
                         </f:facet>
                         <h:commandLink value="Ver" action="#{phoneCall.detailSetup}">
@@ -91,7 +97,7 @@
                             <f:param name="jsfcrud.currentPhoneCall" value="#{jsfcrud_class['com.sitatec.bean.util.JsfUtil'].jsfcrud_method['getAsConvertedString'][item][phoneCall.converter].jsfcrud_invoke}"/>
                         </h:commandLink>
                         <br />
-                        <h:commandLink value="Eliminar" action="#{phoneCall.destroy}">
+                        <h:commandLink value="Eliminar" onclick="if (!confirm('¿Está seguro que desea eliminar este registro?')) return false" action="#{phoneCall.destroy}">
                             <f:param name="jsfcrud.currentPhoneCall" value="#{jsfcrud_class['com.sitatec.bean.util.JsfUtil'].jsfcrud_method['getAsConvertedString'][item][phoneCall.converter].jsfcrud_invoke}"/>
                         </h:commandLink>
                     </h:column>

@@ -15,7 +15,7 @@
         </h:panelGroup>
         <h1>Detalle de llamadas telefónicas</h1>
         <h:form>
-            <h:commandLink value="Menú principal" action="welcome" immediate="true" />&raquo <h:commandLink action="#{phoneCall.listSetup}" value="Lista de llamadas telefónicas"/>
+            <h:commandLink value="Menú principal" action="welcome" immediate="true" />&raquo; <h:commandLink action="#{phoneCall.listSetup}" value="Lista de llamadas telefónicas"/>
             <br />
             <br />
             <h:panelGrid columns="2">

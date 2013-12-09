@@ -15,7 +15,7 @@
         </h:panelGroup>
         <h1>Modificar operador</h1>
         <h:form>
-            <h:commandLink value="Menú principal" action="welcome" immediate="true" />&raquo <h:commandLink action="#{operator.listSetup}" value="Lista de operadores" immediate="true"/>
+            <h:commandLink value="Menú principal" action="welcome" immediate="true" />&raquo; <h:commandLink action="#{operator.listSetup}" value="Lista de operadores" immediate="true"/>
             <br />
             <br />
             <h:commandLink action="#{operator.detailSetup}" value="Detalle de operador" immediate="true">

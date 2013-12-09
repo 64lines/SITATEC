@@ -89,7 +89,7 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText escape="false" value="&nbsp;"/>
+                            <h:outputText escape="false" value="Acciones"/>
                         </f:facet>
                         <h:commandLink value="Ver" action="#{person.detailSetup}">
                             <f:param name="jsfcrud.currentPerson" value="#{jsfcrud_class['com.sitatec.bean.util.JsfUtil'].jsfcrud_method['getAsConvertedString'][item][person.converter].jsfcrud_invoke}"/>
