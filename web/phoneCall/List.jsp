@@ -15,13 +15,23 @@
             <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
         </h:panelGroup>
         <h1>Lista de llamadas telefónicas</h1>
-        <h:form styleClass="jsfcrud_list_form">
+        <h:form styleClass="">
             <h:commandLink value="Menú principal" action="welcome" immediate="true" />
             <br />
             <br />
             <h:commandLink action="#{phoneCall.createSetup}" value="Nueva llamada telefónica"/>
             <br />
-            
+            <br />
+            <h:panelGrid columns="3">
+                <h:outputLabel value="Filtro número de origen:"/>
+                <h:inputText value="#{phoneCall.originNumberFilter}"/>
+                <h:commandLink value="Filtrar" action="#{phoneCall.listSetup}"/>
+                <h:outputLabel value="Filtro número de destino:"/>
+                <h:inputText value="#{phoneCall.destinationNumberFilter}"/>
+                <h:commandLink value="Filtrar" action="#{phoneCall.listSetup}"/>
+            </h:panelGrid>
+        </h:form>
+        <h:form styleClass="jsfcrud_list_form">
             <br />
             <h:outputText escape="false" value="(No hay llamadas telefónicas disponibles)<br />" rendered="#{phoneCall.pagingInfo.itemCount == 0}" />
             <h:panelGroup rendered="#{phoneCall.pagingInfo.itemCount > 0}">

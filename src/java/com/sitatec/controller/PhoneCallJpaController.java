@@ -9,6 +9,7 @@ import com.sitatec.controller.exceptions.NonexistentEntityException;
 import com.sitatec.controller.exceptions.PreexistingEntityException;
 import com.sitatec.model.PhoneCall;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -134,6 +135,26 @@ public class PhoneCallJpaController {
 
     public List<PhoneCall> findPhoneCallEntities() {
         return findPhoneCallEntities(true, -1, -1);
+    }
+
+    public List<PhoneCall> findPhoneCallsByOriginNumber(String originNumber) {
+        List<PhoneCall> phoneCalls = new ArrayList<PhoneCall>();
+        for(PhoneCall phoneCall: findPhoneCallEntities()) {
+            if(phoneCall.getOriginNumber().equals(originNumber)) {
+                phoneCalls.add(phoneCall);
+            }
+        }
+        return phoneCalls;
+    }
+
+    public List<PhoneCall> findPhoneCallsByDestinationNumber(String destinationNumber) {
+        List<PhoneCall> phoneCalls = new ArrayList<PhoneCall>();
+        for(PhoneCall phoneCall: findPhoneCallEntities()) {
+            if(phoneCall.getDestinationNumber().equals(destinationNumber)) {
+                phoneCalls.add(phoneCall);
+            }
+        }
+        return phoneCalls;
     }
 
     public List<PhoneCall> findPhoneCallEntities(int maxResults, int firstResult) {

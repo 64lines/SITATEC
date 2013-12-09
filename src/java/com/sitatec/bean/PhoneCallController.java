@@ -42,6 +42,25 @@ public class PhoneCallController {
     private PhoneCallJpaController jpaController = null;
     private PhoneCallConverter converter = null;
     private PagingInfo pagingInfo = null;
+    private String originNumberFilter;
+    private String destinationNumberFilter;
+
+    public String getDestinationNumberFilter() {
+        return destinationNumberFilter;
+    }
+
+    public void setDestinationNumberFilter(String destinationNumberFilter) {
+        this.destinationNumberFilter = destinationNumberFilter;
+    }
+
+    
+    public String getOriginNumberFilter() {
+        return originNumberFilter;
+    }
+
+    public void setOriginNumberFilter(String originNumberFilter) {
+        this.originNumberFilter = originNumberFilter;
+    }
 
     public PagingInfo getPagingInfo() {
         if (pagingInfo.getItemCount() == -1) {
@@ -187,7 +206,13 @@ public class PhoneCallController {
     public List<PhoneCall> getPhoneCallItems() {
         if (phoneCallItems == null) {
             getPagingInfo();
-            phoneCallItems = jpaController.findPhoneCallEntities(pagingInfo.getBatchSize(), pagingInfo.getFirstItem());
+            if(originNumberFilter != null && !originNumberFilter.equals("")) {
+                phoneCallItems = jpaController.findPhoneCallsByOriginNumber(originNumberFilter);
+            } else if(destinationNumberFilter != null && !destinationNumberFilter.equals("")) {
+                phoneCallItems = jpaController.findPhoneCallsByDestinationNumber(destinationNumberFilter);
+            } else {
+                phoneCallItems = jpaController.findPhoneCallEntities();
+            }
         }
         return phoneCallItems;
     }
