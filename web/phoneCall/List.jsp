@@ -22,17 +22,20 @@
             <h:commandLink action="#{phoneCall.createSetup}" value="Nueva llamada telefónica"/>
             <br />
             <br />
-            <h:panelGrid columns="3">
+
+            <h:panelGrid columns="9">
                 <h:outputLabel value="Filtro número de origen:"/>
                 <h:inputText value="#{phoneCall.originNumberFilter}"/>
-                <h:commandLink value="Filtrar" action="#{phoneCall.listSetup}"/>
                 <h:outputLabel value="Filtro número de destino:"/>
                 <h:inputText value="#{phoneCall.destinationNumberFilter}"/>
+                <h:outputLabel value="Filtro duración:"/>
+                <h:inputText value="#{phoneCall.durationFilter}"/>
+                <h:outputLabel value="Filtro valor total:"/>
+                <h:inputText value="#{phoneCall.costFilter}"/>
                 <h:commandLink value="Filtrar" action="#{phoneCall.listSetup}"/>
             </h:panelGrid>
         </h:form>
         <h:form styleClass="jsfcrud_list_form">
-            <br />
             <h:outputText escape="false" value="(No hay llamadas telefónicas disponibles)<br />" rendered="#{phoneCall.pagingInfo.itemCount == 0}" />
             <h:panelGroup rendered="#{phoneCall.pagingInfo.itemCount > 0}">
                 <h:outputText value="Item #{phoneCall.pagingInfo.firstItem + 1}..#{phoneCall.pagingInfo.lastItem} of #{phoneCall.pagingInfo.itemCount}"/>&nbsp;

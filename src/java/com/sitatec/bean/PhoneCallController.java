@@ -44,6 +44,9 @@ public class PhoneCallController {
     private PagingInfo pagingInfo = null;
     private String originNumberFilter;
     private String destinationNumberFilter;
+    private String durationFilter;
+    private String costFilter;
+
 
     public String getDestinationNumberFilter() {
         return destinationNumberFilter;
@@ -61,6 +64,23 @@ public class PhoneCallController {
     public void setOriginNumberFilter(String originNumberFilter) {
         this.originNumberFilter = originNumberFilter;
     }
+
+    public String getCostFilter() {
+        return costFilter;
+    }
+
+    public void setCostFilter(String costFilter) {
+        this.costFilter = costFilter;
+    }
+
+    public String getDurationFilter() {
+        return durationFilter;
+    }
+
+    public void setDurationFilter(String durationFilter) {
+        this.durationFilter = durationFilter;
+    }
+
 
     public PagingInfo getPagingInfo() {
         if (pagingInfo.getItemCount() == -1) {
@@ -206,12 +226,24 @@ public class PhoneCallController {
     public List<PhoneCall> getPhoneCallItems() {
         if (phoneCallItems == null) {
             getPagingInfo();
+            phoneCallItems = jpaController.findPhoneCallEntities();
+
             if(originNumberFilter != null && !originNumberFilter.equals("")) {
-                phoneCallItems = jpaController.findPhoneCallsByOriginNumber(originNumberFilter);
-            } else if(destinationNumberFilter != null && !destinationNumberFilter.equals("")) {
-                phoneCallItems = jpaController.findPhoneCallsByDestinationNumber(destinationNumberFilter);
-            } else {
-                phoneCallItems = jpaController.findPhoneCallEntities();
+                phoneCallItems = jpaController.findPhoneCallsByOriginNumber(phoneCallItems, originNumberFilter);
+            }
+
+            if(destinationNumberFilter != null && !destinationNumberFilter.trim().equals("")) {
+                phoneCallItems = jpaController.findPhoneCallsByDestinationNumber(phoneCallItems, destinationNumberFilter);
+            }
+
+            if(durationFilter != null && !durationFilter.trim().equals("")) {
+                long duration = Long.parseLong(durationFilter);
+                phoneCallItems = jpaController.findPhoneCallsByDuration(phoneCallItems, duration);
+            }
+
+            if(costFilter != null && !costFilter.trim().equals("")) {
+                long cost = Long.parseLong(costFilter);
+                phoneCallItems = jpaController.findPhoneCallsByCost(phoneCallItems, cost);
             }
         }
         return phoneCallItems;

@@ -137,9 +137,9 @@ public class PhoneCallJpaController {
         return findPhoneCallEntities(true, -1, -1);
     }
 
-    public List<PhoneCall> findPhoneCallsByOriginNumber(String originNumber) {
+    public List<PhoneCall> findPhoneCallsByOriginNumber(List<PhoneCall> listPhoneCalls, String originNumber) {
         List<PhoneCall> phoneCalls = new ArrayList<PhoneCall>();
-        for(PhoneCall phoneCall: findPhoneCallEntities()) {
+        for(PhoneCall phoneCall: listPhoneCalls) {
             if(phoneCall.getOriginNumber().equals(originNumber)) {
                 phoneCalls.add(phoneCall);
             }
@@ -147,10 +147,30 @@ public class PhoneCallJpaController {
         return phoneCalls;
     }
 
-    public List<PhoneCall> findPhoneCallsByDestinationNumber(String destinationNumber) {
+    public List<PhoneCall> findPhoneCallsByDestinationNumber(List<PhoneCall> listPhoneCalls, String destinationNumber) {
         List<PhoneCall> phoneCalls = new ArrayList<PhoneCall>();
-        for(PhoneCall phoneCall: findPhoneCallEntities()) {
+        for(PhoneCall phoneCall: listPhoneCalls) {
             if(phoneCall.getDestinationNumber().equals(destinationNumber)) {
+                phoneCalls.add(phoneCall);
+            }
+        }
+        return phoneCalls;
+    }
+
+    public List<PhoneCall> findPhoneCallsByDuration(List<PhoneCall> listPhoneCalls, long duration) {
+        List<PhoneCall> phoneCalls = new ArrayList<PhoneCall>();
+        for(PhoneCall phoneCall: listPhoneCalls) {
+            if(phoneCall.getDuration() == duration) {
+                phoneCalls.add(phoneCall);
+            }
+        }
+        return phoneCalls;
+    }
+
+    public List<PhoneCall> findPhoneCallsByCost(List<PhoneCall> listPhoneCalls, long cost) {
+        List<PhoneCall> phoneCalls = new ArrayList<PhoneCall>();
+        for(PhoneCall phoneCall: listPhoneCalls) {
+            if(phoneCall.getCost() == cost) {
                 phoneCalls.add(phoneCall);
             }
         }
