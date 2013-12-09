@@ -27,9 +27,9 @@
                 <h:outputText value="Nombre del operador:"/>
                 <h:inputText id="operatorName" value="#{operator.operator.operatorName}" title="OperatorName" required="true" requiredMessage="The operatorName field is required." />
                 <h:outputText value="NIT:"/>
-                <h:inputText id="nit" value="#{operator.operator.nit}" title="Nit" required="true" requiredMessage="The operatorName field is required." />
+                <h:inputText id="nit" value="#{operator.operator.nit}" title="Nit" required="true" requiredMessage="The nit field is required." />
                 <h:outputText value="Correo electrónico:"/>
-                <h:inputText id="email" value="#{operator.operator.email}" title="Nit" required="true" requiredMessage="The operatorName field is required." />
+                <h:inputText id="email" value="#{operator.operator.email}" title="Nit" required="true" requiredMessage="The email field is required." />
                 <h:outputText value="Rango inicial de numeración:"/>
                 <h:inputText id="initialRange" value="#{operator.operator.initialRange}" title="InitialRange" required="true" requiredMessage="The initialRange field is required." />
                 <h:outputText value="Rango final de numeración:"/>

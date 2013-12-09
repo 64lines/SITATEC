@@ -13,37 +13,34 @@
         <h:panelGroup id="messagePanel" layout="block">
             <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
         </h:panelGroup>
-        <h1>DiscountHolyDate Detail</h1>
+        <h1>Detalle de descuento para día especial</h1>
         <h:form>
+            <h:commandLink value="Menú principal" action="welcome" immediate="true" />&raquo; <h:commandLink action="#{discountHolyDate.listSetup}" value="Lista de descuentos para días especiales" immediate="true"/>
+            <br />
+            <br />
             <h:panelGrid columns="2">
+                <%--
                 <h:outputText value="Id:"/>
                 <h:outputText value="#{discountHolyDate.discountHolyDate.id}" title="Id" />
-                <h:outputText value="Description:"/>
-                <h:outputText value="#{discountHolyDate.discountHolyDate.description}" title="Description" />
-                <h:outputText value="DiscountCost:"/>
-                <h:outputText value="#{discountHolyDate.discountHolyDate.discountCost}" title="DiscountCost" />
-                <h:outputText value="DiscountDate:"/>
-                <h:outputText value="#{discountHolyDate.discountHolyDate.discountDate}" title="DiscountDate" />
-
-
+                --%>
+                <h:outputText value="Descripción"/>
+                <h:outputText value="#{discountHolyDate.discountHolyDate.description}" title="Descripción" />
+                <h:outputText value="Valor del descuento:"/>
+                <h:outputText value="$ #{discountHolyDate.discountHolyDate.discountCost}" title="Valor del descuento" />
+                <h:outputText value="Fecha del día especial:"/>
+                <h:outputText value="#{discountHolyDate.discountHolyDate.discountDate}" title="Fecha del día especial" />
             </h:panelGrid>
             <br />
-            <h:commandLink action="#{discountHolyDate.destroy}" value="Destroy">
+            <h:commandLink action="#{discountHolyDate.destroy}" value="Eliminar" onclick="if (!confirm('¿Está seguro que desea eliminar este registro?')) return false">
                 <f:param name="jsfcrud.currentDiscountHolyDate" value="#{jsfcrud_class['com.sitatec.bean.util.JsfUtil'].jsfcrud_method['getAsConvertedString'][discountHolyDate.discountHolyDate][discountHolyDate.converter].jsfcrud_invoke}" />
             </h:commandLink>
             <br />
             <br />
-            <h:commandLink action="#{discountHolyDate.editSetup}" value="Edit">
+            <h:commandLink action="#{discountHolyDate.editSetup}" value="Modificar">
                 <f:param name="jsfcrud.currentDiscountHolyDate" value="#{jsfcrud_class['com.sitatec.bean.util.JsfUtil'].jsfcrud_method['getAsConvertedString'][discountHolyDate.discountHolyDate][discountHolyDate.converter].jsfcrud_invoke}" />
             </h:commandLink>
             <br />
-            <h:commandLink action="#{discountHolyDate.createSetup}" value="New DiscountHolyDate" />
-            <br />
-            <h:commandLink action="#{discountHolyDate.listSetup}" value="Show All DiscountHolyDate Items"/>
-            <br />
-            <br />
-            <h:commandLink value="Index" action="welcome" immediate="true" />
-
+            <h:commandLink action="#{discountHolyDate.createSetup}" value="Nuevo descuento para día especial" />
         </h:form>
         </body>
     </html>

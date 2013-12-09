@@ -6,38 +6,29 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 
-
 <%--
     This file is an entry point for JavaServer Faces application.
 --%>
 <f:view>
-     <html>
+    <html>
         <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-            <title>Ingreso</title>
-            <link rel="stylesheet" type="text/css" href="/SITATEC/faces/jsfcrud.css" />
-            <!-- Latest compiled and minified CSS -->
-            <link rel="stylesheet" type="text/css" href="/SITATEC/faces/bootstrap.min.css">
-            <!-- Optional theme -->
-            <link rel="stylesheet" type="text/css" href="/SITATEC/faces/bootstrap-theme.min.css">
-            <!-- Latest compiled and minified JavaScript -->
-            <script src="/SITATEC/faces/bootstrap.min.js"></script>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <title>Proyecto SITATEC - Ingreso</title>
+            <link rel="stylesheet" type="text/css" href="/Sitatec_Project/faces/jsfcrud.css" />
         </head>
         <body>
-        <h:panelGroup id="messagePanel" layout="block">
-            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-        </h:panelGroup>
-        <h1>Iniciar Sesi&oacute;n</h1>
-        <h:form>
-            <h:panelGrid columns="2">
-                <h:outputText value="Username:"/>
-                <h:inputText id="username" value="#{registeredUser.registeredUser.username}" title="Username" required="true" requiredMessage="The username field is required." />
-                <h:outputText value="Password:"/>
-                <h:inputSecret id="password" value="#{registeredUser.registeredUser.password}" title="Password" required="true" requiredMessage="The password field is required." />
-            </h:panelGrid>
-            <h:commandButton action="#{registeredUser.loginUser}" value="Ingresar"/>
-        </h:form>
-        
+            <h1 id="mainTitle"><h:outputText value="Proyecto SITATEC"/></h1>
+            <h2 id="mainSubtitle"><h:outputText value="Ingreso"/></h2>
+            <h:form>
+                <h:panelGrid columns="2" styleClass="centerTable">
+                    <h:outputText value="Nombre de usuario:"/>
+                    <h:inputText value="#{person.person.username}"/>
+                    <h:outputText value="Contraseña:"/>
+                    <h:inputText value="#{person.person.password}"/>
+                    <br />
+                    <h:commandButton action="#{person.login}" value="Ingresar"/>
+                </h:panelGrid>
+            </h:form>
         </body>
     </html>
 </f:view>

@@ -24,7 +24,7 @@ CREATE TABLE "operator" (
     nit                 varchar(25) NOT NULL UNIQUE,
     email               varchar(50) NOT NULL UNIQUE,
     initial_range       integer NOT NULL,
-    final_range         integer NOT NULL
+    final_range         integer NOT NULL,
     operator_type       integer NOT NULL
 );
 

@@ -62,6 +62,18 @@ public class PersonController {
         return person;
     }
 
+    public String login() {
+        PersonJpaController controller = new PersonJpaController();
+        for(Person p : controller.findPersonEntities()) {
+            if (p.getUsername().equals(person.getUsername())
+                    && p.getPassword().equals(person.getPassword())) {
+                return "welcome";
+            }
+        }
+        JsfUtil.addErrorMessage("El nombre de usuario o la contraseña son incorrectos.");
+        return "login";
+    }
+
     public String listSetup() {
         reset(true);
         return "person_list";

@@ -35,7 +35,7 @@ public class PhoneCallJpaController {
     }
 
     public void bussinessLogicValidations(PhoneCall phoneCall) throws PreexistingEntityException, Exception {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/ddHH:mm");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/ddH:mm:ss");
         try {
             Date date = simpleDateFormat.parse(phoneCall.getStartTime());
         } catch (Exception e) {

@@ -2,6 +2,7 @@
 <%@page pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsf/core" prefix="f" %>
 <%@taglib uri="http://java.sun.com/jsf/html" prefix="h" %>
+<%@taglib uri="http://myfaces.apache.org/tomahawk" prefix="t" %>
 <f:view>
     <html>
         <head>
@@ -20,6 +21,7 @@
             <br />
             <h:commandLink action="#{phoneCall.createSetup}" value="Nueva llamada telefónica"/>
             <br />
+            
             <br />
             <h:outputText escape="false" value="(No hay llamadas telefónicas disponibles)<br />" rendered="#{phoneCall.pagingInfo.itemCount == 0}" />
             <h:panelGroup rendered="#{phoneCall.pagingInfo.itemCount > 0}">
@@ -101,11 +103,13 @@
                             <f:param name="jsfcrud.currentPhoneCall" value="#{jsfcrud_class['com.sitatec.bean.util.JsfUtil'].jsfcrud_method['getAsConvertedString'][item][phoneCall.converter].jsfcrud_invoke}"/>
                         </h:commandLink>
                     </h:column>
-
                 </h:dataTable>
             </h:panelGroup>
             <br />
-            
+            <h:form enctype="multipart/form-data">
+                <t:inputFileUpload id="uploadedFile" value="#{phoneCall.uploadedFile}" size="20" />
+                <h:commandButton value="Cargar" action="#{phoneCall.upload}" />
+            </h:form>
         </h:form>
         </body>
     </html>

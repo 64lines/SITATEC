@@ -8,6 +8,14 @@
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
             <title>Detalle de operador</title>
             <link rel="stylesheet" type="text/css" href="/Sitatec_Project/faces/jsfcrud.css" />
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="/Sitatec_Project/faces/bootstrap.min.css">
+
+            <!-- Optional theme -->
+            <link rel="stylesheet" href="/Sitatec_Project/faces/bootstrap-theme.min.css">
+
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
         </head>
         <body>
         <h:panelGroup id="messagePanel" layout="block">
