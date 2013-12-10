@@ -22,7 +22,6 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.model.SelectItem;
-import org.apache.myfaces.custom.fileupload.UploadedFile;
 
 /**
  *
@@ -36,7 +35,7 @@ public class PhoneCallController {
         pagingInfo = new PagingInfo();
         converter = new PhoneCallConverter();
     }
-    private UploadedFile uploadedFile;
+    
     private PhoneCall phoneCall = null;
     private List<PhoneCall> phoneCallItems = null;
     private PhoneCallJpaController jpaController = null;
@@ -88,34 +87,6 @@ public class PhoneCallController {
         }
         return pagingInfo;
     }
-
-    public UploadedFile getUploadedFile() {
-        return uploadedFile;
-    }
-
-    public void setUploadedFile(UploadedFile uploadedFile) {
-        this.uploadedFile = uploadedFile;
-    }
-
-    public String upload(){
-        System.out.println("Going to upload");
-        InputStream is = null;
-        try {
-            System.out.println("---> Before get size: [" + uploadedFile + "]");
-            long size = uploadedFile.getSize();
-            System.out.println("---> Before get Input stream");
-            is = uploadedFile.getInputStream();
-            System.out.println("---> Size: " + size);
-            byte[] buffer = new byte[(int)size];
-            is.read(buffer,0,(int)size);
-            is.close();
-            return "phoneCall_list";
-        } catch (IOException ex) {
-            System.out.println("Excepcion: " + ex.getMessage());
-        }
-        
-        return "welcome";
-    }  
 
     public SelectItem[] getPhoneCallItemsAvailableSelectMany() {
         return JsfUtil.getSelectItems(jpaController.findPhoneCallEntities(), false);
