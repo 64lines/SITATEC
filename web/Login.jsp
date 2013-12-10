@@ -19,6 +19,9 @@
         <body>
             <h1 id="mainTitle"><h:outputText value="Proyecto SITATEC"/></h1>
             <h2 id="mainSubtitle"><h:outputText value="Ingreso"/></h2>
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table" styleClass="centerTable"/>
+            </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2" styleClass="centerTable">
                     <h:outputText value="Nombre de usuario:"/>
