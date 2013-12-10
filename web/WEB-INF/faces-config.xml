@@ -246,7 +246,7 @@
     <navigation-rule>
         <navigation-case>
             <from-outcome>login</from-outcome>
-            <to-view-id>/login.jsp</to-view-id>
+            <to-view-id>/Login.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>

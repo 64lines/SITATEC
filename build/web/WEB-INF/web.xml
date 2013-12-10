@@ -13,14 +13,6 @@
         <session-timeout>90</session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>faces/login.jsp</welcome-file>
+        <welcome-file>faces/Login.jsp</welcome-file>
     </welcome-file-list>
-    <filter>
-        <filter-name>Extensions Filter</filter-name>
-        <filter-class>org.apache.myfaces.webapp.filter.ExtensionsFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>Extensions Filter</filter-name>
-        <servlet-name>Faces Servlet</servlet-name>
-    </filter-mapping>
 </web-app>

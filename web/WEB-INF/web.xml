@@ -13,6 +13,6 @@
         <session-timeout>90</session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>faces/login.jsp</welcome-file>
+        <welcome-file>faces/Login.jsp</welcome-file>
     </welcome-file-list>
 </web-app>

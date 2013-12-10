@@ -2,7 +2,6 @@
 <%@page pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsf/core" prefix="f" %>
 <%@taglib uri="http://java.sun.com/jsf/html" prefix="h" %>
-<%@taglib uri="http://myfaces.apache.org/tomahawk" prefix="t" %>
 <f:view>
     <html>
         <head>
@@ -118,11 +117,6 @@
                     </h:column>
                 </h:dataTable>
             </h:panelGroup>
-            <br />
-            <h:form enctype="multipart/form-data">
-                <t:inputFileUpload id="uploadedFile" value="#{phoneCall.uploadedFile}" size="20" />
-                <h:commandButton value="Cargar" action="#{phoneCall.upload}" />
-            </h:form>
         </h:form>
         </body>
     </html>
