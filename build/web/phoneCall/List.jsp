@@ -117,6 +117,8 @@
                     </h:column>
                 </h:dataTable>
             </h:panelGroup>
+            <br />
+            <h:commandLink value="Cargar archivo de llamadas" action="upload_file" immediate="true" />
         </h:form>
         </body>
     </html>

@@ -5,6 +5,8 @@
 
 package com.sitatec.model;
 
+import com.sitatec.bean.DiscountHolyDateController;
+import com.sitatec.controller.DiscountHolyDateJpaController;
 import com.sitatec.controller.OperatorJpaController;
 import com.sitatec.controller.TariffJpaController;
 import java.io.Serializable;
@@ -125,7 +127,7 @@ public class PhoneCall implements Serializable {
     public long getCost() {
         int originId = 0;
         int destinationId = 0;
-
+        long totalDurationValue = 0;
         Operator originOperator = this.getOriginOperador();
         Operator destinationOperator = this.getDestinationOperador();
 
@@ -137,18 +139,33 @@ public class PhoneCall implements Serializable {
         destinationId = destinationOperator.getId();
 
         TariffJpaController controller = new TariffJpaController();
+        DiscountHolyDateJpaController dateController = new DiscountHolyDateJpaController();
 
         for(Tariff tariff: controller.findTariffEntities()) {
             if(tariff.getOriginOperator() == originId
                     && tariff.getDestinationOperator() == destinationId) {
                String valueFee = tariff.getValueFee().toString();
-               long totalDurationValue = Long.parseLong(valueFee) * this.getDuration();
-               
-               return totalDurationValue;
+               totalDurationValue = Long.parseLong(valueFee) * this.getDuration();
+               break;
             }
         }
 
-        return 0L;
+        for(DiscountHolyDate discountHolyDate: dateController.findDiscountHolyDateEntities()) {
+            String discountDate = discountHolyDate.getDiscountDate();
+            if(this.destinationNumber.startsWith(discountDate)
+                    && this.originNumber.startsWith(discountDate)) {
+
+               String discountCost = discountHolyDate.getDiscountCost().toString();
+               totalDurationValue -= Long.parseLong(discountCost);
+               
+               if(totalDurationValue < 0) {
+                   totalDurationValue = 0;
+               }
+               break;
+            }
+        }
+
+        return totalDurationValue;
     }
 
     public String getOriginOperadorName() {

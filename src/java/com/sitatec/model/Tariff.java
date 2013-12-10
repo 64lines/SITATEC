@@ -70,6 +70,10 @@ public class Tariff implements Serializable {
         return originOperator;
     }
 
+    /**
+     * Obtiene el nombre del operador de origen
+     * @return
+     */
     public String getOriginOperatorName() {
         OperatorJpaController controller = new OperatorJpaController();
         Operator operator = controller.findOperator(originOperator);

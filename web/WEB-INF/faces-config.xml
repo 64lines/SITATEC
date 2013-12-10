@@ -249,6 +249,12 @@
             <to-view-id>/Login.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>upload_file</from-outcome>
+            <to-view-id>/phoneCall/UploadFile.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
 
 

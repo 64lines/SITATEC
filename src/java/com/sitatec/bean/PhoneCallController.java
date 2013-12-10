@@ -7,6 +7,7 @@ package com.sitatec.bean;
 
 import com.sitatec.bean.util.PagingInfo;
 import com.sitatec.controller.PhoneCallJpaController;
+import com.sitatec.controller.exceptions.PreexistingEntityException;
 import com.sitatec.model.PhoneCall;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -45,8 +46,32 @@ public class PhoneCallController {
     private String destinationNumberFilter;
     private String durationFilter;
     private String costFilter;
+    private String textFileCalls;
 
+    public PhoneCallConverter getConverter() {
+        return converter;
+    }
 
+    public void setConverter(PhoneCallConverter converter) {
+        this.converter = converter;
+    }
+
+    public PhoneCallJpaController getJpaController() {
+        return jpaController;
+    }
+
+    public void setJpaController(PhoneCallJpaController jpaController) {
+        this.jpaController = jpaController;
+    }
+
+    public String getTextFileCalls() {
+        return textFileCalls;
+    }
+
+    public void setTextFileCalls(String textFileCalls) {
+        this.textFileCalls = textFileCalls;
+    }
+    
     public String getDestinationNumberFilter() {
         return destinationNumberFilter;
     }
@@ -86,6 +111,30 @@ public class PhoneCallController {
             pagingInfo.setItemCount(jpaController.getPhoneCallCount());
         }
         return pagingInfo;
+    }
+
+    public String uploadCallFile() {
+        String[] linesFileCalls = this.textFileCalls.split("\n");
+        PhoneCallJpaController callJpaController = new PhoneCallJpaController();
+
+        for(String line : linesFileCalls) {
+            PhoneCall phoneCall = new PhoneCall();
+            String[] call = line.split(";");
+            phoneCall.setOriginNumber(call[0]);
+            phoneCall.setDestinationNumber(call[1]);
+            phoneCall.setStartTime(call[2]);
+            phoneCall.setEndTime(call[3]);
+            
+            try {
+                callJpaController.create(phoneCall);
+            } catch (PreexistingEntityException ex) {
+                Logger.getLogger(PhoneCallController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (Exception ex) {
+                Logger.getLogger(PhoneCallController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        JsfUtil.addSuccessMessage("Llamadas subidas correctamente.");
+        return "upload_file";
     }
 
     public SelectItem[] getPhoneCallItemsAvailableSelectMany() {
@@ -272,9 +321,4 @@ public class PhoneCallController {
             createSetup();
         }
     }
-
-    public Converter getConverter() {
-        return converter;
-    }
-
 }
